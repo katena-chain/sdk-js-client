@@ -17,36 +17,21 @@ format, sign and send a transaction.
 
 Feel free to explore and modify its code to meet your expectations.
 
-Here is a snippet to demonstrate its usage:
+## Examples
 
-```javascript
-const { Transactor } = require('@katena-chain/sdk-js-client/lib/client/transactor')
+Detailed examples are provided in the `examples` folder to explain how to use our `Transactor` helper methods.
 
-async function main() {
-  const apiUrl = 'https://api.demo.katena.transchain.io'
-  const apiUrlSuffix = 'api/v1'
-  const chainID = 'katena-chain'
-  const privateKeyBase64 = '7C67DeoLnhI6jvsp3eMksU2Z6uzj8sqZbpgwZqfIyuCZbfoPcitCiCsSp2EzCfkY52Mx58xDOyQLb1OhC7cL5A=='
-  const companyChainID = 'abcdef'
+Available examples:
+* Send a `Certificate`
+* Retrieve a `Certificate`
+* Encrypt and send a `Secret`
+* Retrieve a list of `Secret`
 
-  const transactor = new Transactor(apiUrl, apiUrlSuffix, chainID, privateKeyBase64, companyChainID)
-
-  const uuid = '7529b5d0-16ba-4856-b139-dd6a48a87ad4'
-  const dataSignature = 'document_signature_value'
-  const dataSigner = 'document_signer_value'
-
-  try {
-    const apiResponse = await transactor.sendCertificate(uuid, dataSignature, dataSigner)
-    console.log('API status code : ' + apiResponse.statusCode)
-    console.log('API body        : ' + JSON.stringify(apiResponse.body).replace('\n', ''))
-  } catch (e) {
-    console.log(e.message)
-  }
-}
-
-main().then()
+For instance, to send a certificate:
+```bash
+node examples/send_certificate.js
 ```
 
 ## Katena documentation
 
-For more information, check the [katena documentation](https://doc.katena.transchain.io)
+For more information, check the [katena documentation](https://doc.katena.transchain.io).
