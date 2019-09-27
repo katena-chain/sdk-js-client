@@ -1,5 +1,7 @@
 # SDK JS Client
 
+Please use [sdk-js](https://github.com/katena-chain/sdk-js) instead.
+
 ## Requirements
 
 - NodeJS >= 8.x
